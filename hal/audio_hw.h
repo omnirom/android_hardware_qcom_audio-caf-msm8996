@@ -40,6 +40,7 @@
 
 #include <stdlib.h>
 #include <cutils/list.h>
+#include <hardware/audio_amplifier.h>
 #include <hardware/audio.h>
 #include <tinyalsa/asoundlib.h>
 #include <tinycompress/tinycompress.h>
@@ -479,6 +480,7 @@ struct audio_device {
     qahwi_device_t qahwi_dev;
     bool vr_audio_mode_enabled;
     struct audio_device_config_param *device_cfg_params;
+    amplifier_device_t *amp;
 };
 
 int select_devices(struct audio_device *adev,
